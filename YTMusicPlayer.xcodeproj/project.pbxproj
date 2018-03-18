@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113139AD205EA169003357FE /* 潘美辰写不完的爱.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 113139AA205EA169003357FE /* 潘美辰写不完的爱.mp3 */; };
+		113139AE205EA169003357FE /* 莫斯科没有眼泪twins.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 113139AB205EA169003357FE /* 莫斯科没有眼泪twins.mp3 */; };
+		113139AF205EA169003357FE /* 郑源为爱停留.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 113139AC205EA169003357FE /* 郑源为爱停留.mp3 */; };
 		118E67AE1EFE7017006F10BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 118E67AD1EFE7017006F10BB /* main.m */; };
 		118E67B11EFE7017006F10BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 118E67B01EFE7017006F10BB /* AppDelegate.m */; };
 		118E67B41EFE7017006F10BB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118E67B31EFE7017006F10BB /* ViewController.m */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		113139AA205EA169003357FE /* 潘美辰写不完的爱.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "潘美辰写不完的爱.mp3"; sourceTree = "<group>"; };
+		113139AB205EA169003357FE /* 莫斯科没有眼泪twins.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "莫斯科没有眼泪twins.mp3"; sourceTree = "<group>"; };
+		113139AC205EA169003357FE /* 郑源为爱停留.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "郑源为爱停留.mp3"; sourceTree = "<group>"; };
 		118E67A91EFE7017006F10BB /* YTMusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YTMusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		118E67AD1EFE7017006F10BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		118E67AF1EFE7017006F10BB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -90,6 +96,9 @@
 		118E67AC1EFE7017006F10BB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				113139AA205EA169003357FE /* 潘美辰写不完的爱.mp3 */,
+				113139AB205EA169003357FE /* 莫斯科没有眼泪twins.mp3 */,
+				113139AC205EA169003357FE /* 郑源为爱停留.mp3 */,
 				118E67AD1EFE7017006F10BB /* main.m */,
 			);
 			name = "Supporting Files";
@@ -126,7 +135,7 @@
 				TargetAttributes = {
 					118E67A81EFE7017006F10BB = {
 						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -155,9 +164,12 @@
 			files = (
 				118E67BC1EFE7017006F10BB /* LaunchScreen.storyboard in Resources */,
 				118E67B91EFE7017006F10BB /* Assets.xcassets in Resources */,
+				113139AF205EA169003357FE /* 郑源为爱停留.mp3 in Resources */,
 				118E67CF1EFE9BED006F10BB /* YTMusicTableViewCell.xib in Resources */,
 				118E67B71EFE7017006F10BB /* Main.storyboard in Resources */,
 				118E67C71EFE7034006F10BB /* YTMusicPlayer.xib in Resources */,
+				113139AE205EA169003357FE /* 莫斯科没有眼泪twins.mp3 in Resources */,
+				113139AD205EA169003357FE /* 潘美辰写不完的爱.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,11 +304,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YTMusicPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yetaiwen.YTMusicPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -304,11 +320,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YTMusicPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yetaiwen.YTMusicPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -331,6 +351,7 @@
 				118E67C21EFE7017006F10BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -67,7 +67,8 @@ YTMusicPlayer * ytPlayerController = nil;
     if ([_currentItem isKindOfClass:[MPMediaItem class]]) {
         self.titleLal.text = [_currentItem valueForProperty:MPMediaItemPropertyTitle];
     }else{
-
+        NSURL *url = (NSURL*)_currentItem;
+        self.titleLal.text = url.path.lastPathComponent;
     }
     _titleLal.font = [UIFont systemFontOfSize:15];
     _titleLal.textColor = [UIColor whiteColor];
@@ -82,13 +83,8 @@ YTMusicPlayer * ytPlayerController = nil;
     UIBarButtonItem * backItem = [[UIBarButtonItem alloc]initWithCustomView:backBtn];
     self.navigationItem.leftBarButtonItem = backItem;
     /***  注册cell ***/
-    [self.tableView registerNib:[UINib nibWithNibName:@"YIMusicTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"YIMusicTableViewCell"];
-}
-/**
- *  isFromFileManager setter
- */
-- (void)setIsFromFileManager:(BOOL)isFromFileManager{
-
+    [self.tableView registerNib:[UINib nibWithNibName:@"YTMusicTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"YTMusicTableViewCell"];
+    
     if (!_musicPlayer) {
         _currentPlayItem = [[AVPlayerItem alloc]initWithURL:[self getCurrentItemUrl:_currentItem]];
         _musicPlayer = [[AVPlayer alloc]initWithPlayerItem:_currentPlayItem];
@@ -101,6 +97,7 @@ YTMusicPlayer * ytPlayerController = nil;
     [self musicPlayerStartPlay];
     [self.tableView reloadData];
 }
+
 /**
  *  开始播放
  */
@@ -118,6 +115,7 @@ YTMusicPlayer * ytPlayerController = nil;
     if ([currentItem isKindOfClass:[MPMediaItem class]]) {
         currentUrl = [currentItem valueForProperty:MPMediaItemPropertyAssetURL];
     }else{
+        currentUrl = currentItem;
     }
     return currentUrl;
     
@@ -126,23 +124,23 @@ YTMusicPlayer * ytPlayerController = nil;
  *  播放完了
  */
 - (void)playEnd:(NSNotification *)nofy{
-        NSUInteger currentRow=[self.musicList indexOfObject:self.currentItem];
-        switch (_musicPlayMode) {
-            case MusicPlayModeRepeat:
-                currentRow = (currentRow+1) % self.musicList.count;
-                break;
-                
-            case MusicPlayModeRandomRepeat:
-                currentRow = arc4random() % self.musicList.count;
-                break;
-                
-            default:
-                break;
-        }
-        self.currentItem=[self.musicList objectAtIndex:currentRow];
-        self.currentPlayItem = [[AVPlayerItem alloc]initWithURL:[self getCurrentItemUrl:self.currentItem]];
-        [self.musicPlayer replaceCurrentItemWithPlayerItem:self.currentPlayItem];
-        [self musicPlayerStartPlay];
+    NSUInteger currentRow=[self.musicList indexOfObject:self.currentItem];
+    switch (_musicPlayMode) {
+        case MusicPlayModeRepeat:
+            currentRow = (currentRow+1) % self.musicList.count;
+            break;
+            
+        case MusicPlayModeRandomRepeat:
+            currentRow = arc4random() % self.musicList.count;
+            break;
+            
+        default:
+            break;
+    }
+    self.currentItem=[self.musicList objectAtIndex:currentRow];
+    self.currentPlayItem = [[AVPlayerItem alloc]initWithURL:[self getCurrentItemUrl:self.currentItem]];
+    [self.musicPlayer replaceCurrentItemWithPlayerItem:self.currentPlayItem];
+    [self musicPlayerStartPlay];
 }
 /**
  *  设置cell选定状态
@@ -152,7 +150,8 @@ YTMusicPlayer * ytPlayerController = nil;
     if ([mediaItem isKindOfClass:[MPMediaItem class]]) {
         self.titleLal.text = [mediaItem valueForProperty:MPMediaItemPropertyTitle];
     }else{
-       
+        NSURL *url = (NSURL*)_currentItem;
+        self.titleLal.text = url.path.lastPathComponent;
     }
     NSUInteger  index = [self.musicList indexOfObject:mediaItem];
     NSIndexPath * indexPath = [NSIndexPath indexPathForRow:index inSection:0];
@@ -233,11 +232,11 @@ YTMusicPlayer * ytPlayerController = nil;
  *  pop事件
  */
 - (void)backAction{
-        //        [self.musicList removeAllObjects];
-        //        self.musicList = nil;
-        //        self.currentItem = nil;
-        //        self.currentPlayItem = nil;
-
+    //        [self.musicList removeAllObjects];
+    //        self.musicList = nil;
+    //        self.currentItem = nil;
+    //        self.currentPlayItem = nil;
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -291,8 +290,8 @@ YTMusicPlayer * ytPlayerController = nil;
             [infoDict setObject:[self.currentItem valueForProperty:MPMediaItemPropertyAlbumTitle] forKey:MPMediaItemPropertyAlbumTitle];
         }else {
             AVURLAsset * asset = nil;
-            NSURL * url = nil;
-          
+            NSURL * url = self.currentItem;
+            
             asset = [AVURLAsset assetWithURL:url];
             for (NSString * format in [asset availableMetadataFormats]) {
                 for (AVMetadataItem * metadata in [asset metadataForFormat:format]) {
@@ -329,12 +328,13 @@ YTMusicPlayer * ytPlayerController = nil;
     return self.musicList.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    YTMusicTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"YIMusicTableViewCell"];
+    YTMusicTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"YTMusicTableViewCell" forIndexPath:indexPath];
     id item = self.musicList[indexPath.row];
     if ([item isKindOfClass:[MPMediaItem class]]) {
         cell.musicNameLal.text = [item valueForProperty:MPMediaItemPropertyTitle];
     }else{
-       
+        NSURL *url = (NSURL*)item;
+        cell.musicNameLal.text = url.path.lastPathComponent;
     }
     return cell;
 }
@@ -397,13 +397,13 @@ YTMusicPlayer * ytPlayerController = nil;
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
