@@ -42,6 +42,9 @@ musicPlayer.currentItem = self.songList[0];
 * 可扩展性
 可以再源文件中进行判断，增加对传入数组内的数据进行特别处理，以实现对不同的音乐类型进行无缝播放。
 建议扩展处在源文件中有注释。
+* 效果图片
+> ![1.png](https://upload-images.jianshu.io/upload_images/2737326-67d0d37a914781bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+> ![2.png](https://upload-images.jianshu.io/upload_images/2737326-9b5baa1da66a7124.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 PS:博客说明地址：[一款简单好用的在线音乐播放器(可功能扩展)](https://www.jianshu.com/p/5fc6935e8d85)
 
