@@ -10,6 +10,8 @@
 		113139AD205EA169003357FE /* 潘美辰写不完的爱.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 113139AA205EA169003357FE /* 潘美辰写不完的爱.mp3 */; };
 		113139AE205EA169003357FE /* 莫斯科没有眼泪twins.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 113139AB205EA169003357FE /* 莫斯科没有眼泪twins.mp3 */; };
 		113139AF205EA169003357FE /* 郑源为爱停留.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 113139AC205EA169003357FE /* 郑源为爱停留.mp3 */; };
+		113139B2205EB4A3003357FE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 113139B0205EB4A3003357FE /* README.md */; };
+		113139B3205EB4A3003357FE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 113139B1205EB4A3003357FE /* LICENSE */; };
 		118E67AE1EFE7017006F10BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 118E67AD1EFE7017006F10BB /* main.m */; };
 		118E67B11EFE7017006F10BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 118E67B01EFE7017006F10BB /* AppDelegate.m */; };
 		118E67B41EFE7017006F10BB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118E67B31EFE7017006F10BB /* ViewController.m */; };
@@ -26,6 +28,8 @@
 		113139AA205EA169003357FE /* 潘美辰写不完的爱.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "潘美辰写不完的爱.mp3"; sourceTree = "<group>"; };
 		113139AB205EA169003357FE /* 莫斯科没有眼泪twins.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "莫斯科没有眼泪twins.mp3"; sourceTree = "<group>"; };
 		113139AC205EA169003357FE /* 郑源为爱停留.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "郑源为爱停留.mp3"; sourceTree = "<group>"; };
+		113139B0205EB4A3003357FE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		113139B1205EB4A3003357FE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		118E67A91EFE7017006F10BB /* YTMusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YTMusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		118E67AD1EFE7017006F10BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		118E67AF1EFE7017006F10BB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 		118E67AB1EFE7017006F10BB /* YTMusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				113139B0205EB4A3003357FE /* README.md */,
+				113139B1205EB4A3003357FE /* LICENSE */,
 				118E67AF1EFE7017006F10BB /* AppDelegate.h */,
 				118E67B01EFE7017006F10BB /* AppDelegate.m */,
 				118E67B21EFE7017006F10BB /* ViewController.h */,
@@ -168,6 +174,7 @@
 				118E67CF1EFE9BED006F10BB /* YTMusicTableViewCell.xib in Resources */,
 				118E67B71EFE7017006F10BB /* Main.storyboard in Resources */,
 				118E67C71EFE7034006F10BB /* YTMusicPlayer.xib in Resources */,
+				113139B3205EB4A3003357FE /* LICENSE in Resources */,
 				113139AE205EA169003357FE /* 莫斯科没有眼泪twins.mp3 in Resources */,
 				113139AD205EA169003357FE /* 潘美辰写不完的爱.mp3 in Resources */,
 			);
@@ -180,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				113139B2205EB4A3003357FE /* README.md in Sources */,
 				118E67B41EFE7017006F10BB /* ViewController.m in Sources */,
 				118E67B11EFE7017006F10BB /* AppDelegate.m in Sources */,
 				118E67AE1EFE7017006F10BB /* main.m in Sources */,
